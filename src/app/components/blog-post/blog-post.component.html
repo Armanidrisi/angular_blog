@@ -1,0 +1,33 @@
+<main class="container mx-auto mt-16 px-6">
+  <div class="md:flex md:justify-between md:items-center mb-10">
+    <div class="mb-6 md:mb-0">
+      <h2 class="text-2xl font-bold text-gray-800">{{post?.title}}</h2>
+      <p class="text-gray-600">
+        Published on {{post?.date |date}} by {{post?.author}}
+      </p>
+    </div>
+    <div class="flex items-center">
+      <img
+        class="h-10 w-10 rounded-full object-cover"
+        src="https://avatars.githubusercontent.com/u/119788224?v=4"
+        alt="Author avatar"
+      />
+      <div class="ml-3">
+        <p class="text-gray-800 font-semibold">{{post?.author}}</p>
+        <p class="text-gray-600">Author</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center mb-6">
+    <div class="w-full h-full my-3">
+      <img
+        class="w-full object-cover object-center rounded-lg shadow-md"
+        [src]="post?.image"
+        alt="Blog post image"
+      />
+    </div>
+  </div>
+  <div class="md:flex md:justify-between md:items-start">
+    <div class="mb-10 md:mr-10 md:mb-0 prose lg:prose-xl" [innerHTML]="post?.content"></div>
+  </div>
+</main>
